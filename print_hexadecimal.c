@@ -59,8 +59,6 @@ int print_hexadecimal_lower(va_list ap)
 {
 	unsigned int num = va_arg(ap, unsigned int);
 
-	if (num < 0)
-		num = -num;
 	return (print_hex_lower(num, 0));
 }
 
@@ -72,8 +70,6 @@ int print_hexadecimal_lower(va_list ap)
 int print_hexadecimal_caps(va_list ap)
 {
 	unsigned int num = va_arg(ap, unsigned int);
-
-	if (num < 0)
-		num = -num;
+	
 	return (print_hex_caps(num, 0));
 }
