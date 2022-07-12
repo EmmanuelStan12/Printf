@@ -23,10 +23,14 @@ int _printf(char *format, ...)
 		{'i', print_int}
 	};
 
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
 	i = 0;
 	size = 0;
 	va_start(ap, format);
-	while (format != NULL && format[i] != '\0')
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
@@ -35,8 +39,7 @@ int _printf(char *format, ...)
 
 			if (c == '%')
 			{
-				_putchar('%');
-				size++;
+				size = size + _putchar('%');
 				i++;
 			}
 			else
@@ -53,19 +56,19 @@ int _printf(char *format, ...)
 				}
 				if (j >= 9)
 				{
-					_putchar('%');
-					_putchar(c);
+					size = size + _putchar('%');
+					size = size + _putchar(c);
 					i++;
-					size++;
 				}
 			}
 		}
 		else
 		{
-			_putchar(format[i]);
-			size++;
+			size = size + _putchar(format[i]);
 		}
 		i++;
 	}
+	_putchar(-1);
+	va_end(ap);
 	return (size);
 }
