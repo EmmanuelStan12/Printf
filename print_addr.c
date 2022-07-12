@@ -1,8 +1,13 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
-int print_addr_hex(uintptr_t value)
+/**
+ * print_hex - prints a value in hexadecimal
+ * @value: value to be evaluated
+ * _case: case of the hex
+ * Return: size of the hex
+ */
+int print_hex(uintptr_t value, char _case)
 {
 	uintptr_t factor;
 	int size, i;
@@ -20,7 +25,7 @@ int print_addr_hex(uintptr_t value)
 		return (-1);
 	i = 0;
 	factor = value;
-	while (i < size)
+	while (factor != 0)
 	{
 		*(p + i) = factor % 16;
 		factor /= 16;
@@ -33,7 +38,7 @@ int print_addr_hex(uintptr_t value)
 
 		k = *(p + i);
 		if (k > 9)
-			_putchar(k + 87);
+			_putchar(k + _case);
 		else
 			_putchar(k + '0');
 		i--;
@@ -51,6 +56,6 @@ int print_addr(va_list ap)
 	size = 0;
 	size += _putchar('0');
 	size += _putchar('x');
-	size += print_addr_hex(num);
+	size += print_hex(num, 87);
 	return (size);
 }
