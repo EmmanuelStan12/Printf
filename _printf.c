@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 /**
- * _printf - prints a given string
- * @format: the format of the string to be printed
+ * _printf - produces output according to a format
+ * @format: format string containing the characters and the specifiers
  * Return: the integer
  */
 int _printf(char *format, ...)
