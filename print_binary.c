@@ -27,7 +27,7 @@ int print_binary(va_list ap)
 	unsigned int num, size;
 	int value;
 
-	value = va_arg(ap, unsigned int);
+	value = va_arg(ap, int);
 	size = 0;
 	if (value < 0)
 	{
@@ -36,6 +36,6 @@ int print_binary(va_list ap)
 	}
 	num = value;
 	convert_int(num);
-	size = _size(num, 2);
+	size = size + _size(num, 2);
 	return (size);
 }
