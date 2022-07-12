@@ -68,7 +68,6 @@ int _printf(char *format, ...)
 		}
 		i++;
 	}
-	_putchar(-1);
 	va_end(ap);
 	return (size);
 }
