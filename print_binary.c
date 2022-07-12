@@ -27,6 +27,11 @@ int print_binary(va_list ap)
 	unsigned int num, size;
 
 	num = va_arg(ap, unsigned int);
+	if (num < 0)
+	{
+		size = size + _putchar('-');
+		return (size);
+	}
 	convert_int(num);
 	size = _size(num, 2);
 	return (size);
