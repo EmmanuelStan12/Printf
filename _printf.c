@@ -24,10 +24,9 @@ int _printf(char *format, ...)
 		{'b', print_binary}
 	};
 
-	if (!format || (format[0] == '%' && !format[1]))
+	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
+
 	i = 0;
 	size = 0;
 	va_start(ap, format);
@@ -43,7 +42,7 @@ int _printf(char *format, ...)
 				size = size + _putchar('%');
 				i++;
 			}
-			else
+			else if (c != '\0')
 			{
 				while (j < 10)
 				{
@@ -68,7 +67,7 @@ int _printf(char *format, ...)
 			size = size + _putchar(format[i]);
 		}
 		i++;
+		va_end(ap);
 	}
-	va_end(ap);
 	return (size);
 }
