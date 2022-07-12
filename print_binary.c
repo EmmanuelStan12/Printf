@@ -25,13 +25,16 @@ void convert_int(unsigned int value)
 int print_binary(va_list ap)
 {
 	unsigned int num, size;
+	int value;
 
-	num = va_arg(ap, unsigned int);
-	if (num < 0)
+	value = va_arg(ap, unsigned int);
+	size = 0;
+	if (value < 0)
 	{
 		size = size + _putchar('-');
 		return (size);
 	}
+	num = value;
 	convert_int(num);
 	size = _size(num, 2);
 	return (size);
