@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_str - Print string on the screen using a custom-made function and shows how to concatenate them.
+ * print_str - Print function and shows how to concatenate them.
  * @ap: list to be evaluated
  * Return: void
  */

@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * print_whole_int - function that prints an integer as a character
- * @value: the value to be printed
+ * print_int - function that prints an integer as a character
+ * @num: the value to be printed
+ * @size: the size of the num
  * Return: void
  */
 int print_int(unsigned int num, unsigned int size)
 {
-        unsigned int value, unit;
+	unsigned int value, unit;
 
 	value = num;
 	unit = 1;
@@ -26,8 +27,8 @@ int print_int(unsigned int num, unsigned int size)
 }
 
 /**
- * print_int - prints an unsigned int
- * @value: the value to be printed
+ * print_i - prints an unsigned int
+ * @ap: the list to be printed
  * Return: void
  */
 int print_i(va_list ap)
@@ -45,11 +46,21 @@ int print_i(va_list ap)
 	return (len);
 }
 
+/**
+ * print_d - prints a decimal digit
+ * @ap: list
+ * Return: the length
+ */
 int print_d(va_list ap)
 {
 	return (print_i(ap));
 }
 
+/**
+ * print_unsignedint - prints a decimal digit
+ * @ap: list
+ * Return: the length
+ */
 int print_unsignedint(va_list ap)
 {
 	unsigned int value;

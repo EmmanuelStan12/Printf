@@ -5,6 +5,7 @@
 #include <stddef.h>
 #include <limits.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 /**
  * struct identifier_type - structure definition

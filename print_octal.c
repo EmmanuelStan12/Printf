@@ -1,6 +1,49 @@
 #include "main.h"
 
 /**
+ * print_oct - prints a value in octadecimal
+ * @value: the value to be printed
+ * Return: void
+ */
+int print_oct(unsigned int value)
+{
+	unsigned int factor;
+	int size, i;
+	char *p;
+
+	size = 0;
+	factor = value;
+	while (factor != 0)
+	{
+		factor /= 8;
+		size++;
+	}
+	p = malloc(size * sizeof(*p));
+	if (p == NULL)
+		return (-1);
+	i = 0;
+	factor = value;
+	while (factor != 0)
+	{
+		*(p + i) = factor % 8;
+		factor /= 8;
+		i++;
+	}
+	i--;
+	while (i >= 0)
+	{
+		int k;
+
+		k = *(p + i);
+		_putchar(k + '0');
+		i--;
+	}
+	return (size);
+}
+
+
+
+/**
  * print_octal - prints a value in octadecimal
  * @value: the value to be printed
  * Return: void
@@ -21,16 +64,15 @@ void print_octal(unsigned int value)
 }
 
 /**
- * print_octaldecimal - prints a value in octadecimal
+ * print_octadecimal - prints a value in octadecimal
  * @ap: list to be evaluated
  * Return: void
  */
 int print_octadecimal(va_list ap)
 {
 	unsigned int num, size;
-	
+
 	num = va_arg(ap, unsigned int);
-	size = _size(num, 8);
-	print_octal(num);
+	size = print_oct(num);
 	return (size);
 }

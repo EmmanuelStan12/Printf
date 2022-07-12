@@ -19,13 +19,13 @@ void convert_int(unsigned int value)
 
 /**
  * print_binary - prints a binary
- * @value: the value to be converted
+ * @ap: the value to be converted
  * Return: size of the int
  */
 int print_binary(va_list ap)
 {
 	unsigned int size, num;
-	
+
 	num = va_arg(ap, int);
 	size = 0;
 	if (num < 1)

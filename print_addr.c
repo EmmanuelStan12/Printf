@@ -1,10 +1,9 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
  * print_hex - prints a value in hexadecimal
  * @value: value to be evaluated
- * _case: case of the hex
+ * @_case: case of the hex
  * Return: size of the hex
  */
 int print_hex(uintptr_t value, char _case)
@@ -47,6 +46,11 @@ int print_hex(uintptr_t value, char _case)
 	return (size);
 }
 
+/**
+ * print_addr - prints the address
+ * @ap: list to be evaluated
+ * Return: the length of the address
+ */
 int print_addr(va_list ap)
 {
 	void *ptr = va_arg(ap, void *);
