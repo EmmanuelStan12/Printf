@@ -23,7 +23,7 @@ void print_hex(unsigned int value, char adder)
 }
 
 /**
- * print_hexadecimal - prints hexadecimal
+ * print_hexadecimal - prints a decimal in hexadecimal
  * @ap: list to be evaluated
  * Return: void
  */
@@ -38,7 +38,7 @@ int print_hexadecimal_lower(va_list ap)
 }
 
 /**
- * print_hexadecimal - prints hexadecimal
+ * print_hexadecimal - prints a decimal in hexadecimal
  * @ap: list to be evaluated
  * Return: void
  */
