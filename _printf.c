@@ -20,7 +20,8 @@ int _printf(char *format, ...)
 		{'o', print_octadecimal},
 		{'s', print_str},
 		{'p', print_addr},
-		{'i', print_int}
+		{'i', print_int},
+		{'b', print_binary}
 	};
 
 	if (!format || (format[0] == '%' && !format[1]))
@@ -44,7 +45,7 @@ int _printf(char *format, ...)
 			}
 			else
 			{
-				while (j < 9)
+				while (j < 10)
 				{
 					if (types[j].type == c)
 					{
@@ -54,7 +55,7 @@ int _printf(char *format, ...)
 					}
 					j++;
 				}
-				if (j >= 9)
+				if (j >= 10)
 				{
 					size = size + _putchar('%');
 					size = size + _putchar(c);

@@ -5,7 +5,6 @@
 #include <stddef.h>
 #include <limits.h>
 #include <stdint.h>
-#include <stdio.h>
 
 /**
  * struct identifier_type - structure definition
@@ -25,6 +24,8 @@ int print_char(va_list ap);
 int print_hexadecimal_lower(va_list ap);
 
 int print_hexadecimal_caps(va_list ap);
+
+int print_binary(va_list ap);
 
 int print_octadecimal(va_list ap);
 
