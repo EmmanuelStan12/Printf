@@ -1,25 +1,44 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void print_addr_hex(long unsigned int value)
+int print_addr_hex(uintptr_t value)
 {
-        long unsigned int factor, remainder;
+	uintptr_t factor;
+	int size, i;
+	char *p;
 
-        if (value / 16 == 0)
-        {
-                remainder = value % 16;
-                if (remainder > 9)
-                        _putchar(remainder + 87);
-                else
-                        _putchar(remainder + '0');
-                return;
-        }
-        factor = value / 16;
-        remainder = value % 16;
-        print_addr_hex(factor);
-        if (remainder > 9)
-                _putchar(remainder + 87);
-        else
-                _putchar(remainder + '0');
+	size = 0;
+	factor = value;
+	while (factor != 0)
+	{
+		factor /= 16;
+		size++;
+	}
+	p = malloc(size * sizeof(*p));
+	if (p == NULL)
+		return (-1);
+	i = 0;
+	factor = value;
+	while (i < size)
+	{
+		*(p + i) = factor % 16;
+		factor /= 16;
+		i++;
+	}
+	i--;
+	while (i >= 0)
+	{
+		int k;
+
+		k = *(p + i);
+		if (k > 9)
+			_putchar(k + 87);
+		else
+			_putchar(k + '0');
+		i--;
+	}
+	return (size);
 }
 
 int print_addr(va_list ap)
@@ -28,9 +47,9 @@ int print_addr(va_list ap)
 	uintptr_t num = (uintptr_t)ptr;
 	int size;
 
-	_putchar('0');
-	_putchar('x');
-	size = _size(num, 16);
-	print_addr_hex(num);
-	return (size + 2);
+	size = 0;
+	size += _putchar('0');
+	size += _putchar('x');
+	size += print_addr_hex(num);
+	return (size);
 }
