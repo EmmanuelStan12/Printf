@@ -31,7 +31,7 @@ int print_binary(va_list ap)
 	size = 0;
 	if (value < 0)
 	{
-		size = size + _putchar('-');
+		size = size + _putchar('0');
 		return (size);
 	}
 	num = value;
