@@ -24,9 +24,23 @@ void print_addr_hex(long unsigned int value)
 
 int print_addr(va_list ap)
 {
-	void *ptr = va_arg(ap, void *);
+	void *ptr;
 	uintptr_t num = (uintptr_t)ptr;
 	int size;
+	char *s = "(nil)";
+
+	ptr = va_arg(num, void *);
+	size = 0;
+	if (ptr == NULL)
+	{
+		while (*s != NULL)
+		{
+			_putchar(*s);
+			s++;
+			size++;
+		}
+		return (size);
+	}
 
 	_putchar('0');
 	_putchar('x');
