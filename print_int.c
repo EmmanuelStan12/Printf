@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_whole_int - prints the integer as char
+ * print_whole_int - function that prints an integer as a character
  * @value: the value to be printed
  * Return: void
  */
