@@ -25,9 +25,8 @@ void convert_int(unsigned int value)
 int print_binary(va_list ap)
 {
 	unsigned int num, size;
-	int value;
 
-	value = va_arg(ap, int);
+	num = va_arg(ap, unsigned int);
 	size = 0;
 	if (value < 1)
 	{
@@ -35,7 +34,6 @@ int print_binary(va_list ap)
 		size++;
 		return (size);
 	}
-	num = value;
 	convert_int(num);
 	size = _size(num, 2);
 	return (size);
