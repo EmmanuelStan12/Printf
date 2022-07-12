@@ -31,7 +31,9 @@ int print_octadecimal(va_list ap);
 
 int print_str(va_list ap);
 
-int print_int(va_list ap);
+int print_i(va_list ap);
+
+int print_d(va_list ap);
 
 int _putchar(char c);
 

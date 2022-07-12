@@ -13,14 +13,14 @@ int _printf(char *format, ...)
 	int size;
 	identifier_type types[] = {
 		{'c', print_char},
-		{'d', print_int},
+		{'d', print_d},
 		{'u', print_unsignedint},
 		{'x', print_hexadecimal_lower},
 		{'X', print_hexadecimal_caps},
 		{'o', print_octadecimal},
 		{'s', print_str},
 		{'p', print_addr},
-		{'i', print_int},
+		{'i', print_i},
 		{'b', print_binary}
 	};
 
