@@ -37,6 +37,6 @@ int print_binary(va_list ap)
 	}
 	num = value;
 	convert_int(num);
-	size = size + _size(num, 2);
+	size = _size(num, 2);
 	return (size);
 }
