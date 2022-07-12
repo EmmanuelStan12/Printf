@@ -1,6 +1,6 @@
 #include "main.h"
 
-int print_hex_caps(unsigned int value, int num)
+void print_hex(unsigned int value, char adder)
 {
 	unsigned int factor, remainder;
 
@@ -8,46 +8,18 @@ int print_hex_caps(unsigned int value, int num)
 	{
 		remainder = value % 16;
 		if (remainder > 9)
-			_putchar(remainder + 55);
+			_putchar(remainder + adder);
 		else
 			_putchar(remainder + '0');
-		num++;
-		return (num);
+		return;
 	}
 	factor = value / 16;
 	remainder = value % 16;
-	num = num + print_hex_caps(factor, num);
+	print_hex(factor, adder);
 	if (remainder > 9)
-		_putchar(remainder + 55);
+		_putchar(remainder + adder);
 	else
 		_putchar(remainder + '0');
-	num++;
-	return (num);
-}
-
-int print_hex_lower(unsigned int value, int num)
-{
-	unsigned int factor, remainder;
-
-	if (value / 16 == 0)
-	{
-		remainder = value % 16;
-		if (remainder > 9)
-			_putchar(remainder + 87);
-		else
-			_putchar(remainder + '0');
-		num++;
-		return (num);
-	}
-	factor = value / 16;
-	remainder = value % 16;
-	num = num + print_hex_lower(factor, num);
-	if (remainder > 9)
-		_putchar(remainder + 87);
-	else
-		_putchar(remainder + '0');
-	num++;
-	return (num);
 }
 
 /**
@@ -57,9 +29,12 @@ int print_hex_lower(unsigned int value, int num)
  */
 int print_hexadecimal_lower(va_list ap)
 {
-	unsigned int num = va_arg(ap, unsigned int);
-
-	return (print_hex_lower(num, 0));
+	unsigned int num, size;
+		
+	num = va_arg(ap, unsigned int);
+	size = _size(num, 16);
+	print_hex(num, 87);
+	return (size);
 }
 
 /**
@@ -69,7 +44,10 @@ int print_hexadecimal_lower(va_list ap)
  */
 int print_hexadecimal_caps(va_list ap)
 {
-	unsigned int num = va_arg(ap, unsigned int);
-	
-	return (print_hex_caps(num, 0));
+	unsigned int num, size;
+		
+	num = va_arg(ap, unsigned int);
+	size = _size(num, 16);
+	print_hex(num, 55);
+	return (size);
 }

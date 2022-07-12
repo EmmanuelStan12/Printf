@@ -26,17 +26,16 @@ int print_whole_int(unsigned int n, int num)
  */
 int print_int(va_list ap)
 {
-	int value, n, size;
+	int value, size;
 
 	value = va_arg(ap, int);
 	if (value < 0)
 	{
 		_putchar('-');
-		n = -value;
+		value = value * -1;
 	}
-	else
-		n = value;
-	size = print_whole_int(n, 0);
+	size = _size(value, 10);
+	print_whole_int(value, 0);
 	return (size);
 }
 
@@ -46,6 +45,7 @@ int print_unsignedint(va_list ap)
 	int size;
 
 	value = va_arg(ap, unsigned int);
-	size = print_whole_int(value, 0);
+	size = _size(value, 10);
+	print_whole_int(value, 0);
 	return (size);
 }

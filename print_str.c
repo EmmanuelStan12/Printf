@@ -29,5 +29,7 @@ int print_str(va_list ap)
 	
 	if (str == NULL)
 		str = "(nil)";
+	else if (*str == '\0')
+		return (-1);
 	return (print_substr(str));
 }

@@ -5,17 +5,16 @@
  * @value: value to be converted
  * Return: size of the int
  */
-int convert_int(unsigned int value, int num)
+void convert_int(unsigned int value)
 {
 	unsigned int factor, remainder;
 
 	if (value == 0)
-		return (num);
+		return;
 	factor = value / 2;
 	remainder = value % 2;
-	num = num + convert_int(factor, num);
+	convert_int(factor);
 	_putchar(remainder + '0');
-	return (num);
 }
 
 /**
@@ -25,9 +24,10 @@ int convert_int(unsigned int value, int num)
  */
 int print_binary(va_list ap)
 {
-	unsigned int result, num;
+	unsigned int num, size;
 
-	result = va_arg(ap, unsigned int);
-	num = convert_int(result, 0);
-	return (num);
+	num = va_arg(ap, unsigned int);
+	convert_int(num);
+	size = _size(num, 2);
+	return (size);
 }

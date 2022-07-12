@@ -1,6 +1,6 @@
 #include "main.h"
 
-int print_hex(long unsigned int value, int num)
+void print_addr_hex(long unsigned int value)
 {
         long unsigned int factor, remainder;
 
@@ -11,28 +11,26 @@ int print_hex(long unsigned int value, int num)
                         _putchar(remainder + 87);
                 else
                         _putchar(remainder + '0');
-		num++;
-                return (num);
+                return;
         }
         factor = value / 16;
         remainder = value % 16;
-        num = num + print_hex(factor, num);
+        print_addr_hex(factor);
         if (remainder > 9)
                 _putchar(remainder + 87);
         else
                 _putchar(remainder + '0');
-	num++;
-        return (num);
 }
 
 int print_addr(va_list ap)
 {
 	void *ptr = va_arg(ap, void *);
 	uintptr_t num = (uintptr_t)ptr;
-	int i;
+	int size;
 
 	_putchar('0');
 	_putchar('x');
-	i = print_hex(num, 0);
-	return (i + 2);
+	size = _size(num, 16);
+	print_addr_hex(num);
+	return (size + 2);
 }

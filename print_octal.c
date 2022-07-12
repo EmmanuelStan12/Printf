@@ -5,22 +5,19 @@
  * @value: the value to be printed
  * Return: void
  */
-int print_octal(unsigned int value, int num)
+void print_octal(unsigned int value)
 {
 	unsigned int factor, remainder;
 
 	if (value / 8 == 0)
 	{
 		_putchar(value % 8 + '0');
-		num++;
-		return (num);
+		return;
 	}
 	factor = value / 8;
 	remainder = value % 8;
-	num = num + print_octal(factor, num);
+	print_octal(factor);
 	_putchar(remainder + '0');
-	num++;
-	return (num);
 }
 
 /**
@@ -30,7 +27,10 @@ int print_octal(unsigned int value, int num)
  */
 int print_octadecimal(va_list ap)
 {
-	unsigned int result = va_arg(ap, unsigned int);
-
-	return print_octal(result, 0);
+	unsigned int num, size;
+	
+	num = va_arg(ap, unsigned int);
+	size = _size(num, 8);
+	print_octal(num);
+	return (size);
 }
