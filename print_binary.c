@@ -29,9 +29,10 @@ int print_binary(va_list ap)
 
 	value = va_arg(ap, int);
 	size = 0;
-	if (value < 0)
+	if (value < 1)
 	{
-		size = size + _putchar('0');
+		_putchar('0');
+		size++;
 		return (size);
 	}
 	num = value;
