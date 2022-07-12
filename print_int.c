@@ -5,15 +5,24 @@
  * @value: the value to be printed
  * Return: void
  */
-void print_int(unsigned int n)
+int print_int(unsigned int num, unsigned int size)
 {
-        if (n < 10)
+        unsigned int value, unit;
+
+	value = num;
+	unit = 1;
+	while (value > 9)
 	{
-		_putchar(n + '0');
-		return;
+		value /= 10;
+		unit *= 10;
 	}
-	print_int(n / 10);
-	_putchar((n % 10) + '0');
+
+	while (unit >= 1)
+	{
+		size += _putchar(((num / unit) % 10) + '0');
+		unit /= 10;
+	}
+	return (size);
 }
 
 /**
@@ -23,19 +32,17 @@ void print_int(unsigned int n)
  */
 int print_i(va_list ap)
 {
-	int value, size;
+	int value, size, len;
 
 	value = va_arg(ap, int);
 	size = 0;
 	if (value < 0)
 	{
-		_putchar('-');
+		size += _putchar('-');
 		value = value * -1;
-		size += 1;
 	}
-	size += _size(value, 10);
-	print_int(value);
-	return (size);
+	len = print_int(value, size);
+	return (len);
 }
 
 int print_d(va_list ap)
@@ -46,10 +53,9 @@ int print_d(va_list ap)
 int print_unsignedint(va_list ap)
 {
 	unsigned int value;
-	int size;
+	int size = 0, len;
 
 	value = va_arg(ap, unsigned int);
-	size = _size(value, 10);
-	print_int(value);
-	return (size);
+	len = print_int(value, size);
+	return (len);
 }
