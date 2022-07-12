@@ -11,7 +11,7 @@ int print_str(va_list ap)
 	char *str = va_arg(ap, char *);
 
 	if (str == NULL)
-		str = "(nil)";
+		str = "(null)";
 
 	while (*str != '\0')
 	{
