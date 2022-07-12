@@ -38,6 +38,7 @@ int print_addr_hex(uintptr_t value)
 			_putchar(k + '0');
 		i--;
 	}
+	free(p);
 	return (size);
 }
 
