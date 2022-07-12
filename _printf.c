@@ -1,5 +1,34 @@
 #include "main.h"
-#include <stdio.h>
+
+/**
+ * _formatted_print - prints a formatted type
+ * Return: void
+ */
+void _formatted_print(char *format, int *size, identifier_type types[], int i, va_list ap)
+{
+	char c = format[i + 1];
+	int j = 0;
+
+	if (c == '%')
+		*size = *size + _putchar('%');
+	else if (c != '\0')
+	{
+		while (j < 10)
+		{
+			if (types[j].type == c)
+			{
+				*size = *size + types[j].print(ap);
+				break;
+			}
+			j++;
+		}
+		if (j >= 10)
+		{
+			*size += _putchar('%');
+			*size += _putchar(c);
+		}
+	}
+}
 
 /**
  * _printf - produces output according to a format
@@ -8,9 +37,8 @@
  */
 int _printf(char *format, ...)
 {
-	int i;
+	int i = 0, size = 0;
 	va_list ap;
-	int size;
 	identifier_type types[] = {
 		{'c', print_char},
 		{'d', print_d},
@@ -27,45 +55,16 @@ int _printf(char *format, ...)
 	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	i = 0;
-	size = 0;
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			char c = format[i + 1];
-			int j = 0;
-
-			if (c == '%')
-			{
-				size = size + _putchar('%');
-				i++;
-			}
-			else if (c != '\0')
-			{
-				while (j < 10)
-				{
-					if (types[j].type == c)
-					{
-						size = size + types[j].print(ap);
-						i++;
-						break;
-					}
-					j++;
-				}
-				if (j >= 10)
-				{
-					size = size + _putchar('%');
-					size = size + _putchar(c);
-					i++;
-				}
-			}
+			_formatted_print(format, &size, types, i, ap);
+			i++;
 		}
 		else
-		{
-			size = size + _putchar(format[i]);
-		}
+			size += _putchar(format[i]);
 		i++;
 		va_end(ap);
 	}
