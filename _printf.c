@@ -2,9 +2,15 @@
 
 /**
  * _formatted_print - prints a formatted type
+ * @format: format of the string
+ * @size: size of the string
+ * @types: types of the types of values to be evaluated
+ * @i: current pointer value
+ * @ap: variable list
  * Return: void
  */
-void _formatted_print(char *format, int *size, identifier_type types[], int i, va_list ap)
+void _formatted_print(char *format, int *size, identifier_type types[],
+		int i, va_list ap)
 {
 	char c = format[i + 1];
 	int j = 0;
