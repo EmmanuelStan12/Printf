@@ -9,7 +9,7 @@ void convert_int(unsigned int value)
 {
 	unsigned int factor, remainder;
 
-	if (value == 0)
+	if (value <= 0)
 		return;
 	factor = value / 2;
 	remainder = value % 2;
@@ -24,11 +24,11 @@ void convert_int(unsigned int value)
  */
 int print_binary(va_list ap)
 {
-	unsigned int num, size;
-
-	num = va_arg(ap, unsigned int);
+	unsigned int size, num;
+	
+	num = va_arg(ap, int);
 	size = 0;
-	if (value < 1)
+	if (num < 1)
 	{
 		_putchar('0');
 		size++;

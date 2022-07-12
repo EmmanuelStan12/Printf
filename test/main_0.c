@@ -43,7 +43,7 @@ int main(void)
 	printf("Unknown:[%r]\n");
 	_printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
 	printf("%i\n", _printf("%b\n", -10));
-	_printf("The binary format of 1024 is: %b and for 1 is %b\n", -1023, 1);
+	_printf("The binary format of 1024 is: %b and for 1 is %b\n", 1023, 1);
 	_printf("%u == %o == %x == %X\n", 1024, 1024, 1024, 1024);
 	_printf("%u\n", UINT_MAX);
 	printf("%u\n", UINT_MAX);
