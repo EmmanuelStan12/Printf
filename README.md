@@ -23,7 +23,9 @@ Integer
 Input: _printf("There are %i dozens in a gross\n", 12);
 
 Output: There are 12 dozens in a gross
+
 Decimal:
 
 Input: _printf("%d\n", 1000);
+
 Output: 1000
