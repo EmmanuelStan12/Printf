@@ -36,10 +36,12 @@ Printing the string of chars "Hello, Holberton":
 
 Use: _printf("Hello Hol%s.", "berton");
 Output: Hello Holberton.
-Printing an integer number:
+
+Printing an integer number;
 
 Use: _printf("10 + 10 is equal to %d.", 20);
 Output: 10 + 10 is equal to 20.
+
 Printing a binary, octal and hexadecimal:
 
 Use: _printf("10 in binary is [%b], in octal is [%o] and in hexadecimal is [%x]", 5, 5, 5);
