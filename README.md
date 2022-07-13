@@ -1,12 +1,13 @@
-0x11 - Printf
+##0x11 - Printf
 
 _printf is a custom implementation of the C programming function printf. This project is an application of the C programming knowledge that ALX Software Engineering cohort 7 students have learned since starting the program
 
 Prototype: int _printf(const char *, ...);
 
-Examples
+##Examples
 
-String
+##String
+
 Input: _printf("%s\n", 'This is a string.');
 
 Output: This is a string.
