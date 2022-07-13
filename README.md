@@ -75,3 +75,8 @@ print_str.c
 Function That Writes The String To Stdout.
 
 /* Indetifier : %s */
+
+print_int.c
+Function That Prints An Integer.
+
+/* Indetifier : %i or %d */
