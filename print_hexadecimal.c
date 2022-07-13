@@ -10,7 +10,11 @@ int print_hexadecimal_lower(va_list ap)
 	unsigned int num, size;
 
 	num = va_arg(ap, unsigned int);
-	size = print_hex(num, 87);
+	size = 0;
+	if (num == 0)
+		size += _putchar('0');
+	else
+		size = print_hex(num, 87);
 	return (size);
 }
 
@@ -24,6 +28,10 @@ int print_hexadecimal_caps(va_list ap)
 	unsigned int num, size;
 
 	num = va_arg(ap, unsigned int);
-	size = print_hex(num, 55);
+	size = 0;
+	if (num == 0)
+		size += _putchar('0');
+	else
+		size = print_hex(num, 55);
 	return (size);
 }

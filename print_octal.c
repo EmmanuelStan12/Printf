@@ -73,6 +73,10 @@ int print_octadecimal(va_list ap)
 	unsigned int num, size;
 
 	num = va_arg(ap, unsigned int);
-	size = print_oct(num);
+	size = 0;
+	if (num == 0)
+		size += _putchar('0');
+	else
+		size = print_oct(num);
 	return (size);
 }

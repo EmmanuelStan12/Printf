@@ -58,6 +58,17 @@ int print_addr(va_list ap)
 	int size;
 
 	size = 0;
+	if (ptr == NULL)
+	{
+		char *nil = "(nil)";
+
+		while (*nil != '\0')
+		{
+			size += _putchar(*nil);
+			nil++;
+		}
+		return (size);
+	}
 	size += _putchar('0');
 	size += _putchar('x');
 	size += print_hex(num, 87);
