@@ -21,8 +21,9 @@ int print_STR(va_list ap)
 		{
 			size += _putchar('\\');
 			size += _putchar('x');
-			size += _putchar('0');
-			print_hex(*str, 55);
+			if (*str / 16 <= 0)
+				size += _putchar('0');
+			size += print_hex(*str, 55);
 		}
 		else
 			size += _putchar(*str);
