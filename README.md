@@ -80,16 +80,19 @@ Function That Writes The String To Stdout.
 /* Indetifier : %s */
 
 print_int.c
+
 Function That Prints An Integer.
 
 /* Indetifier : %i or %d */
 
 print_oct.c
+
 Function That Prints Decimal In Octal.
 
 /* Indetifier : %o */
 
 print_hex.c
+
 Function That Prints Decimal In Hexadecimal.
 
 /* Indetifier : %x */
