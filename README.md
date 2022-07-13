@@ -21,6 +21,7 @@ Output: The first letter in the alphabet is A
 Integer
 
 Input: _printf("There are %i dozens in a gross\n", 12);
+
 Output: There are 12 dozens in a gross
 Decimal:
 
