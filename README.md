@@ -63,3 +63,9 @@ Printing a long integer number and short integer number:
 Use: _printf("1 million as a long int is %ld, but as a short int is %hd", 1000000, 1000000);
 Output: 1 million as a long int is 1000000, but as a short int is 16960
 
+File Functions
+
+_printf.c
+Own Printf Function That Performs Formatted Output Conversion And Print Data.
+
+
