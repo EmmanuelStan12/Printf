@@ -95,3 +95,8 @@ print_binary.c
 Function That Prints Decimal In Binary.
 
 /* Indetifier : %b */
+
+print_rot.c
+Function That Writes The String To Stdout In Rot13.
+
+/* Indetifier : %R */
