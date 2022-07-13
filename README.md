@@ -90,3 +90,8 @@ print_hex.c
 Function That Prints Decimal In Hexadecimal.
 
 /* Indetifier : %x */
+
+print_binary.c
+Function That Prints Decimal In Binary.
+
+/* Indetifier : %b */
