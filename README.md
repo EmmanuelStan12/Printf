@@ -71,4 +71,7 @@ Own Printf Function That Performs Formatted Output Conversion And Print Data.
 main.h
 Header File Were All Prototypes Are Saved.
 
+print_str.c
+Function That Writes The String To Stdout.
 
+/* Indetifier : %s */
