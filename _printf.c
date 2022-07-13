@@ -19,7 +19,7 @@ void _formatted_print(char *format, int *size, identifier_type types[],
 		*size = *size + _putchar('%');
 	else if (c != '\0')
 	{
-		while (j < 11)
+		while (j < 12)
 		{
 			if (types[j].type == c)
 			{
@@ -28,7 +28,7 @@ void _formatted_print(char *format, int *size, identifier_type types[],
 			}
 			j++;
 		}
-		if (j >= 11)
+		if (j >= 12)
 		{
 			*size += _putchar('%');
 			*size += _putchar(c);
@@ -56,7 +56,8 @@ int _printf(char *format, ...)
 		{'p', print_addr},
 		{'i', print_i},
 		{'b', print_binary},
-		{'S', print_STR}
+		{'S', print_STR},
+		{'R', print_rot13}
 	};
 
 	if (!format || (format[0] == '%' && format[1] == '\0'))
