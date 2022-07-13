@@ -8,11 +8,13 @@ Examples
 
 String
 Input: _printf("%s\n", 'This is a string.');
+
 Output: This is a string.
 
 Character
 
 Input: _printf("The first letter in the alphabet is %c\n", 'A');
+
 Output: The first letter in the alphabet is A
 Integer
 
