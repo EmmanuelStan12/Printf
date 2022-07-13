@@ -98,19 +98,23 @@ Function That Prints Decimal In Hexadecimal.
 /* Indetifier : %x */
 
 print_binary.c
+
 Function That Prints Decimal In Binary.
 
 /* Indetifier : %b */
 
 print_rot.c
+
 Function That Writes The String To Stdout In Rot13.
 
 /* Indetifier : %R */
 
 print_addr.c
+
 Function That Prints The Address Of An Input Variable
 
 /* Indetifier : %p */
 
 Authors
+
 Emmanuel Amadiegwu and Rwothomio Solomon
