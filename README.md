@@ -5,9 +5,11 @@ _printf is a custom implementation of the C programming function printf. This pr
 Prototype: int _printf(const char *, ...);
 
 Examples
+
 String
 
 Input: _printf("%s\n", 'This is a string.');
+
 Output: This is a string.
 Character
 
