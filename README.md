@@ -66,12 +66,15 @@ Output: 1 million as a long int is 1000000, but as a short int is 16960
 File Functions
 
 _printf.c
+
 Own Printf Function That Performs Formatted Output Conversion And Print Data.
 
 main.h
+
 Header File Were All Prototypes Are Saved.
 
 print_str.c
+
 Function That Writes The String To Stdout.
 
 /* Indetifier : %s */
