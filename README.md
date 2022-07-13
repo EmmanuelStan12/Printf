@@ -46,7 +46,8 @@ Printing a binary, octal and hexadecimal:
 
 Use: _printf("10 in binary is [%b], in octal is [%o] and in hexadecimal is [%x]", 5, 5, 5);
 Output: 10 in binary is [1010], in octal is [12] and in hexadecimal is [A]
-Printing a string codified in ROT13:
+
+Preinting a string codified in ROT13:
 
 Use: _printf("Hello in ROT13 is %R", "Hello");
 Output: Hello in ROT13 is Urybb
