@@ -28,6 +28,8 @@ int print_hexadecimal_caps(va_list ap);
 
 int print_hex(uintptr_t value, char _case);
 
+int print_STR(va_list ap);
+
 int print_binary(va_list ap);
 
 int print_octadecimal(va_list ap);
