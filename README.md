@@ -80,3 +80,8 @@ print_int.c
 Function That Prints An Integer.
 
 /* Indetifier : %i or %d */
+
+print_oct.c
+Function That Prints Decimal In Octal.
+
+/* Indetifier : %o */
