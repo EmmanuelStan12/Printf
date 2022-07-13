@@ -85,3 +85,8 @@ print_oct.c
 Function That Prints Decimal In Octal.
 
 /* Indetifier : %o */
+
+print_hex.c
+Function That Prints Decimal In Hexadecimal.
+
+/* Indetifier : %x */
